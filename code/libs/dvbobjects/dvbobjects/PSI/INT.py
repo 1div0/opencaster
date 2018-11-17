@@ -45,7 +45,7 @@ class ip_mac_notification_section(Section):
                 self.association_loop),
             "")
 
-	pdl_bytes_length = len(pdl_bytes)
+        pdl_bytes_length = len(pdl_bytes)
         self.table_id_extension = self.action_type << 8 | self.platform_id_hash
 
         fmt = "!BBBBBB%ds%ds" % (len(pdl_bytes), len(al_bytes))
@@ -55,14 +55,14 @@ class ip_mac_notification_section(Section):
             self.platform_id & 0xFF,
             self.processing_order,
             0xF0 << 8 | (pdl_bytes_length >> 8) & 0x0F,
-	    pdl_bytes_length & 0xFF,
+        pdl_bytes_length & 0xFF,
             pdl_bytes,
             al_bytes
             )
 
 class association_loop_item(DVBobject):
   
-  def pack(self):
+    def pack(self):
         # pack target descriptor loop
         tdl_bytes = string.join(
             map(lambda x: x.pack(),
@@ -75,17 +75,17 @@ class association_loop_item(DVBobject):
                 self.operational_descriptor_loop),
             "")
 
-	tdl_bytes_length = len(tdl_bytes)
-	odl_bytes_length = len(odl_bytes)
-	
-	fmt = "!BB%dsBB%ds" % (tdl_bytes_length, odl_bytes_length)
-	
-	return pack(fmt,
-		0xF0 << 8 | (tdl_bytes_length >> 8) & 0x0F,
-		tdl_bytes_length & 0xFF,
-		tdl_bytes,
-		0xF0 << 8 | (odl_bytes_length >> 8) & 0x0F,
-		odl_bytes_length & 0xFF,
-		odl_bytes
-		)
-		
+        tdl_bytes_length = len(tdl_bytes)
+        odl_bytes_length = len(odl_bytes)
+        
+        fmt = "!BB%dsBB%ds" % (tdl_bytes_length, odl_bytes_length)
+        
+        return pack(fmt,
+            0xF0 << 8 | (tdl_bytes_length >> 8) & 0x0F,
+            tdl_bytes_length & 0xFF,
+            tdl_bytes,
+            0xF0 << 8 | (odl_bytes_length >> 8) & 0x0F,
+            odl_bytes_length & 0xFF,
+            odl_bytes
+        )
+        

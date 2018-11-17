@@ -43,8 +43,8 @@ class service_description_section(Section):
 
         fmt = "!HB%ds" % len(sl_bytes)
         return pack(fmt,
-	    self.original_network_id,
-	    0xFF,
+        self.original_network_id,
+        0xFF,
             sl_bytes,
             )
 
@@ -68,8 +68,8 @@ class service_description_other_ts_section(Section):
 
         fmt = "!HB%ds" % len(sl_bytes)
         return pack(fmt,
-	    self.original_network_id,
-	    0xFF,
+            self.original_network_id,
+            0xFF,
             sl_bytes,
             )
 
@@ -86,8 +86,8 @@ class service_loop_item(DVBobject):
 
         fmt = "!HBH%ds" % len(sdl_bytes)
         return pack(fmt,
-                    self.service_ID,
-                    0xFC | (self.EIT_schedule_flag << 1) | (self.EIT_present_following_flag),
-		    (self.running_status << 13) | (self.free_CA_mode << 12) | (len(sdl_bytes) & 0x0FFF),
-                    sdl_bytes,
-                    )
+            self.service_ID,
+            0xFC | (self.EIT_schedule_flag << 1) | (self.EIT_present_following_flag),
+            (self.running_status << 13) | (self.free_CA_mode << 12) | (len(sdl_bytes) & 0x0FFF),
+            sdl_bytes,
+        )

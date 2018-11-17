@@ -31,7 +31,7 @@ class network_information_section(Section):
     section_max_size = 1024
 
     def pack_section_body(self):
-    
+
         # pack network_descriptor_loop
         ndl_bytes = string.join(
             map(lambda x: x.pack(),

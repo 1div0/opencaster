@@ -49,7 +49,7 @@ class selection_information_section(Section):
 
         fmt = "!H%ds%ds" % (len(ti_bytes), len(sl_bytes))
         return pack(fmt,
-	    0xF000 | len(ti_bytes),
+            0xF000 | len(ti_bytes),
             ti_bytes,
             sl_bytes
             )
@@ -66,7 +66,7 @@ class service_loop_item(DVBobject):
 
         fmt = "!HH%ds" % len(sdl_bytes)
         return pack(fmt,
-                    self.service_ID,
-                    0x8000 | (self.running_status << 13) |  (len(sdl_bytes) & 0x0FFF),
-                    sdl_bytes,
-                    )
+            self.service_ID,
+            0x8000 | (self.running_status << 13) |  (len(sdl_bytes) & 0x0FFF),
+            sdl_bytes,
+        )

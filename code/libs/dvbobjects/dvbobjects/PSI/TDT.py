@@ -32,10 +32,10 @@ class time_date_section(DVBobject):
 
         fmt = "!BHHBBB" 
         return pack(fmt,
-	    0x70,
-	    0x7005,
-	    date,
-	    self.hour,
-	    self.minute,
-	    self.second,
-            )
+            0x70,
+            0x7005,
+            date,
+            self.hour,
+            self.minute,
+            self.second,
+        )
