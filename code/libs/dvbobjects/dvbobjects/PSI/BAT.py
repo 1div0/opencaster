@@ -1,9 +1,9 @@
-#! /usr/bin/env python
+#! /usr/bin/env python3
 
 # This file is part of the dvbobjects library.
 # 
-# Copyright © 2004-2013 Lorenzo Pallara l.pallara@avalpa.com
-# Copyright © 2010 Andreas Regel
+# Copyright ï¿½ 2004-2013 Lorenzo Pallara l.pallara@avalpa.com
+# Copyright ï¿½ 2010 Andreas Regel
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by

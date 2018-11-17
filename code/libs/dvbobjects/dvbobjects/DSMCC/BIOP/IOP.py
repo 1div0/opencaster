@@ -1,4 +1,4 @@
-#! /usr/bin/env python
+#! /usr/bin/env python3
 
 # This file is part of the dvbobjects library.
 # 
@@ -54,7 +54,7 @@ class IOR(DVBobject):
 
         taggedProfiles_count = 1        # MHP / TBD
 
-        assert len(self.type_id) == 4, `self.type_id`
+        assert len(self.type_id) == 4, self.type_id
 
         profile_bytes = self.profile.pack()
 
@@ -136,8 +136,8 @@ class BIOP_ObjectLocation(DVBobject):
             "H"                         # moduleId
             "B"                         # major version
             "B"                         # minor version
-            "B"                       	# objectKey length
-	    "L"				# objectKey
+            "B"                         # objectKey length
+            "L"                         # objectKey
             )  
 
         return pack(
@@ -148,8 +148,8 @@ class BIOP_ObjectLocation(DVBobject):
             self.moduleId,
             self.biop_version_major,
             self.biop_version_minor,
-	    4,
-	    self.objectKey,
+            4,
+            self.objectKey,
             )
 
 ######################################################################

@@ -1,8 +1,8 @@
-#! /usr/bin/env python
+#! /usr/bin/env python3
 
 # This file is part of the dvbobjects library.
 # 
-# Copyright © 2000-2001, GMD, Sankt Augustin
+# Copyright ï¿½ 2000-2001, GMD, Sankt Augustin
 # -- German National Research Center for Information Technology 
 #
 # This program is free software; you can redistribute it and/or modify

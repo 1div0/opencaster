@@ -1,4 +1,4 @@
-#! /usr/bin/env python
+#! /usr/bin/env python3
 
 #
 # Copyright  2010, mediatvcom (http://www.mediatvcom.com/), Claude Vanderm. Based on Lorenzo Pallara scripts (l.pallara@avalpa.com) 

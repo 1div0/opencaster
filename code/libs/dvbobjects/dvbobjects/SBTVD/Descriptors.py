@@ -1,4 +1,4 @@
-#! /usr/bin/env python
+#! /usr/bin/env python3
 #
 # Copyright (C) 2010 Robson Tovo <robson.tovo@gmail.com>,
 #                    Marco Casaroli <marco.casaroli@gmail.com>

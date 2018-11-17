@@ -1,4 +1,4 @@
-#! /usr/bin/env python
+#! /usr/bin/env python3
 
 #
 # Copyright (C) 2006  Lorenzo Pallara, lpallara@cineca.it

@@ -1,4 +1,4 @@
-#! /usr/bin/env python
+#! /usr/bin/env python3
 
 # This file is part of the dvbobjects library.
 # 
@@ -34,8 +34,8 @@ def CDR(s, alignment = 4, gap_byte = 0xFF):
 
     while len(s) % alignment:
         s = s + chr(gap_byte)
-    return s					    
-					    
+    return s
+
 ######################################################################
 class DVBobject:
     """The base class for many protocol data units.
@@ -92,16 +92,15 @@ class DVBobject:
         i = 0
         for byte in bytes:
             if i % BYTES_PER_LINE == 0:
-                if i: print             # start on a fresh line...
-                print "%04x " % i,
-            print "%02X" % ord(byte),
+                if i: print()           # start on a fresh line...
+                print("%04x " % i)
+            print("%02X" % ord(byte))
             i = i+1
-        print                           # dump is done => NL
+        print()                         # dump is done => NL
         
     def test(self):
         """Used for debugging."""
         if not self.__dict__:
             self.sample()
         self.dump()
-        print self
-
+        print(self)

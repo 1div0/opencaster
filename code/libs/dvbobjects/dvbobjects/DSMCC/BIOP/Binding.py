@@ -1,4 +1,4 @@
-#! /usr/bin/env python
+#! /usr/bin/env python3
 
 # This file is part of the dvbobjects library.
 # 
@@ -61,13 +61,13 @@ class Binding(DVBobject):
             FMT,
             self.nameComponents_count,
             len(self.nameId), 
-	    self.nameId,
+        self.nameId,
             len(self.nameKind), 
-	    self.nameKind,
+        self.nameKind,
             self.bindingType,
             ior,
             len(self.objectInfo), 
-	    self.objectInfo,
+        self.objectInfo,
             )
 
     def __repr__(self):
@@ -75,9 +75,7 @@ class Binding(DVBobject):
         loc = self.IOR.profile.objectLocation
         mod = loc.moduleId
         key = loc.objectKey
-        return `(self.nameId,
-                 (mod, key),
-                 )`
+        return (self.nameId, (mod, key),)
 
 ######################################################################
 class ObjectFileBinding(Binding):
@@ -90,7 +88,7 @@ class ObjectFileBinding(Binding):
         # Initialize SuperClass
         apply(Binding.__init__, (self,), kwargs)
 
-       	self.objectInfo = pack("!LL", 0, self.contentSize)
+           self.objectInfo = pack("!LL", 0, self.contentSize)
         
 ######################################################################
 class ObjectStreamEventBinding(Binding):
@@ -115,4 +113,3 @@ class ContextBinding(Binding):
 
         # Initialize SuperClass
         apply(Binding.__init__, (self,), kwargs)
-
